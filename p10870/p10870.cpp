@@ -6,7 +6,11 @@ using namespace std;
 
 int fibb(int a)
 {
-    if (a <= 2)
+    if (a == 0)
+    {
+        return 0;
+    }
+    else if(a <=2 ) 
     {
         return 1;
     }
@@ -20,7 +24,7 @@ int main()
 {
     int x;
     cin >> x;
-    cout << fibb(x);
+    cout << fibb(x) << '\n';
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
