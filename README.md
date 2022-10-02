@@ -8,12 +8,19 @@
 테스트
 https://www.acmicpc.net/problem/10870
 
-# 숙제 
-
+## 숙제  2022.10.2
 https://www.acmicpc.net/problem/6603
 
 https://www.acmicpc.net/problem/2705
 
+
+
+
+
+
+
+
+----
 
 
 ## 사용방법 
