@@ -21,7 +21,9 @@ int main()
     string val;
     cin >> val;
     long long int ficount = 0;
+
     vector<char> valist;
+
     for (int i = 0; i < val.size(); i++)
     {
         valist.push_back(val[i]);
@@ -32,10 +34,7 @@ int main()
         int v = 3;
         while ((i + v) <= val.size())
         {
-            
-            
-            
-            int gcount = count(valist.begin() + i, valist.begin() + i+v, 'G');
+           long long gcount = count(valist.begin() + i, valist.begin() + i+v, 'G');
             
             if (gcount == 1 || (v - gcount) == 1)
             {
