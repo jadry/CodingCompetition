@@ -1,4 +1,0 @@
-﻿  p11720.cpp
-C:\O___GIT\X__OFALV\boj-solving-jslee\p11720\p11720.cpp(13,20): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\O___GIT\X__OFALV\boj-solving-jslee\p11720\p11720.cpp(77,6): warning C4101: 'number' :참조되지 않은 지역 변수입니다.
-  p11720.vcxproj -> C:\O___GIT\X__OFALV\boj-solving-jslee\CodingTest\Debug\p11720.exe

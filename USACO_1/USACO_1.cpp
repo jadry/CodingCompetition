@@ -38,12 +38,12 @@ int hundreds, tens, ones, cont = 0;
 
 
 int trying(int a) {
-	if (a <= 2){
+	if (a <= 2) {
 		return 1;
 	}
-	else 
+	else
 	{
-		return trying(a) + trying(a - 1);
+		return trying(a - 1) + trying(a - 2);
 	}
 }
 
@@ -51,22 +51,5 @@ int main() {
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
 	cout.tie(NULL);
-	int x;
-	int y;
-	int temp;
-	for (int tempy = 0; tempy < 5; tempy++) 
-	{
-		for (int tempx = 0; tempx < 5; tempx++)
-		{
-			cin >> temp;
-			if (temp == 1) 
-			{
-				x = tempx + 1;
-				y = tempy + 1; 
-			}
-				
-		}
-	}
-	
-	cout << (abs(x - 3) + abs(y - 3));
+	cout << trying(10);
 }
