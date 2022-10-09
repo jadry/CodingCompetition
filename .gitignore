@@ -1,41 +1,44 @@
-# Prerequisites
-*.d
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
+# ICT IGNORE  ( 2022.10.1 이성열)
+*.~*
+*.bak
+XLog*.XDF
+*.tds
+CVS 
+*.obj 
+ErroList 
 *.exe
-*.out
-*.app
-
-
-.vs
+*.FDB
+*.dsk
+FDB
+*.ddp
+Debug* 
+Release* 
+__history 
+*.map
+*.local 
+*.ils
+*.ilf
+*.ilc
+*.ild
+*.@@@
+*.twfd
+*.twopts
+*.pdb 
+*.bmp 
+*.db 
+*.sdf 
+*.ncb 
+*.aps 
+*.suo 
+*.dll 
+*.config 
+.metadata 
+.vs 
+bin 
+obj 
+*.vpp
+*.brow_pch
+XDB
+*.xml
 .git
-x86
-x64
-Debug
-Release
-bin
