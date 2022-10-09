@@ -10,16 +10,17 @@ void display(vector<char>& v)
 {
     for (int n = 0; n < v.size(); n++)
     {
-        cout << v[n] << " ";
+        cout << v[n] << "/";
     }
     cout << "\n" << endl;
 }
 int main()
 {
-    string first;
+    int first;
     cin >> first;
     string val;
     cin >> val;
+    long long int ficount = 0;
     vector<char> valist;
     for (int i = 0; i < val.size(); i++)
     {
@@ -27,13 +28,29 @@ int main()
     }
     for (int i = 0; i < val.size(); i++)
     {
-        vector <char> templist;
+        
         int v = 3;
         while ((i + v) <= val.size())
         {
-            templist.insert(templist.end(), valist.begin() + i, valist.begin() + i + v);
+            
+            
+            
+            int gcount = count(valist.begin() + i, valist.begin() + i+v, 'G');
+            
+            if (gcount == 1 || (v - gcount) == 1)
+            {
+                ficount ++;
+               
+            }
+            else if (gcount != 0 && (v - gcount) != 0)
+            {
+                break;
+            }
+            v ++;
+            
         }
     }
+    cout << ficount;
 }
 
 // 프로그램 실행: <Ctrl+F5> 또는 [디버그] > [디버깅하지 않고 시작] 메뉴
