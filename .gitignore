@@ -32,7 +32,6 @@ __history
 *.aps 
 *.suo 
 *.dll 
-*.config 
 .metadata 
 .vs 
 bin 
