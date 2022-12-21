@@ -1,4 +1,4 @@
 ﻿  CodingTest.cpp
-  문서.cpp
-  코드를 생성하고 있습니다...
-  CodingTest.vcxproj -> C:\O___GIT\X__OFALV\boj-solving-jslee\CodingTest\Debug\CodingTest.exe
+C:\O___GIT\x___CodingCompetition\CodingTest\CodingTest.cpp(115,14): warning C4307: '*': signed integral constant overflow
+C:\O___GIT\x___CodingCompetition\CodingTest\CodingTest.cpp(117,15): warning C4307: '*': signed integral constant overflow
+  CodingTest.vcxproj -> C:\O___GIT\x___CodingCompetition\CodingTest\Debug\CodingTest.exe

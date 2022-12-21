@@ -9,26 +9,31 @@
 using namespace std;
 
 
+
 int main()
 {
-	ios_base::sync_with_stdio(false);
-	cin.tie(NULL);
-	cout.tie(NULL);
-	int count = 0;
-	string bumber;
-	int total = 0;
-	int number;
-	cin >> count;
-	cin >> bumber;
+	long long n, p, d;
 
+	cin >> n >> p >> d;
 
-	for (int i = 0; i < count; i++)
+	long long  pExp10 = pow(10, p-1);
+	long long  pDigit = n/pExp10%10;
+
+	long long  change = 0;
+
+	if (pDigit <= 4)
 	{
-
-		int x = ((int)bumber[i]) - 48;
-
-		total = total + x;
-
+		change = (pDigit + d) % 10;
 	}
-	cout << total;
+	else 
+	{
+		change = abs(pDigit - d);
+		while (change > 10)
+			change /= 10;
+	}
+
+	long long  result = n - (n % (pExp10*10)) + change * pExp10;
+
+	cout << result;
+
 }

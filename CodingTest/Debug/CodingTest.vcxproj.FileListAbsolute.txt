@@ -1,2 +1,3 @@
 D:\O___TestProject\CodingTest\Debug\CodingTest.exe
 C:\O___GIT\X__OFALV\boj-solving-jslee\CodingTest\Debug\CodingTest.exe
+C:\O___GIT\x___CodingCompetition\CodingTest\Debug\CodingTest.exe
