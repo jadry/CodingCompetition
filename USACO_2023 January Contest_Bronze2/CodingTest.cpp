@@ -4,27 +4,6 @@
 using namespace std;
 
 
-void P(vector<int> vec, vector<int> out,int r, int depth)
-{
-	if (r == depth)
-	{
-		for (auto i : out)
-			cout << i << "";
-		cout << "\n";
-		return ;
-	}
-
-	for (auto i : vec)	
-	{
-		if (find(out.begin(), out.end(), i) != out.end())
-			continue;
-
-		vector<int> result = out;
-		result.push_back(i);
-		P(vec, result, r, depth + 1);
-	}
-}
-
 
 
 
@@ -51,9 +30,9 @@ int GetCost(int mask)
 			continue;
 		}
 
-		for (int j = a[i]-1; j < b[i]; j++)
+		for (int j = a[i]; j <= b[i]; j++)
 		{
-			cool[j] -= p[i];
+			cool[j-1] -= p[i];
 		}
 		cost += m[i];
 
@@ -62,7 +41,7 @@ int GetCost(int mask)
 
 	for (int i = 0; i < 100; i++)
 	{
-		if (cool[i] > 0) // cooing failed
+		if (cool[i] > 0) // cooling failed
 			return -1;
 	}
 

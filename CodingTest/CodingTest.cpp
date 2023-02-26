@@ -2,65 +2,106 @@
 using namespace std;
 
 
+
+
 int main()
 {
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL); cout.tie(NULL);
 
-	int N;
-	
-	cin >> N;
+	int T;
+	cin >> T;
 
-
-	vector<int> p(N);
-	int t;
-
-	for (int i = 0; i < N; i++)
-		cin >> p[i];
-	for (int i = 0; i < N; i++)
+	while (T--)
 	{
-		cin >> t;
+		int N, K;
 
-		p[i] -= t;
+		cin >> N;
+		vector<string> want(N);
+		for (int i = 0; i < N; i++)
+			cin >> want[i];
 
-	}
+		cin >> K;
+		vector<vector<string>> stamp(4, vector<string>(K));
+		for (int i = 0; i < K; i++)
+			cin >> stamp[0][i];
 
 
-	int count = 0;
-	int step;
-	for (int i = 0; i < N; )
-	{
-		if (p[i] == 0)
+		stamp[1] = stamp[0];
+		stamp[2] = stamp[0];
+		stamp[3] = stamp[0];
+
+		//90
+		for (int i = 0; i < K; i++)
+			for (int j = 0; j < K; j++)
+				stamp[1][j][K - i - 1] = stamp[0][i][j];
+
+		//180
+		for (int i = 0; i < K; i++)
+			for (int j = 0; j < K; j++)
+				stamp[2][j][K - i - 1] = stamp[1][i][j];
+
+		//270
+		for (int i = 0; i < K; i++)
+			for (int j = 0; j < K; j++)
+				stamp[3][j][K - i - 1] = stamp[2][i][j];
+
+		for (int i = 0; i < N - K + 1; i++)
+			for (int j = 0; j < N - K + 1; j++)
+				for (int r = 0; r < 4; r++) //rotate
+				{
+					bool next = false;
+					for (int y = 0; y < K; y++)
+					{
+						for (int x = 0; x < K; x++)
+						{
+
+							if (stamp[r][y][x] == '*' && want[i + y][j + x] == '.')
+							{
+								next = true;
+								break;
+							}
+						}
+						if (next)
+							break;
+
+					}
+					if (next)
+						continue;
+
+					for (int y = 0; y < K; y++)
+						for (int x = 0; x < K; x++)
+						{
+							if (stamp[r][y][x] == '*')
+								want[i + y][j + x] = 'O'; // stamp mark
+						}
+				}
+
+		bool isNo = false;
+		for (int i = 0; i < N; i++)
 		{
-			i++;
-			continue;
-		}
-
-		if (p[i] > 0)
-			step = -1;
-		else
-			step = 1;
-
-		for (int j = i; j < N; j++)
-		{
-			if (p[j] == 0)
-				break;
-			if (step * p[j] > 0) //0이거나 부호가 다르면 정지
-				break;
-
-			if (j == i && j < N - 1 && p[j + 1] == 0)
+			for (int j = 0; j < N; j++)
 			{
-				count += (fabs(p[i]) -1 );
-				p[j] = 0;
-				break;
+				if (want[i][j] == '*')
+				{
+					isNo = true;
+					break;
+				}
 			}
-
-			p[j] += step;
+			if (isNo)
+				break;
 
 		}
-		count ++;
+
+		if( isNo)
+			cout << "NO\n";
+		else
+			cout << "YES\n";
 
 	}
-	cout << count; 
+
+	
+	return 0;
+
 
 }
