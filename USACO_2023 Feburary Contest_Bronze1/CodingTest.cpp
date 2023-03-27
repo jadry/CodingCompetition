@@ -16,13 +16,11 @@ int main()
 
 	cin >> N >> T;
 
-	long long stock = 0;
 	long long eat = 0;
 
-	long long preD=0, preB = 0;
 	long long d=0, b=0;
 
-	long long eatDay = 0;
+	long long lastDay = 0;
 
 	for (int i = 0; i < N; i++)
 	{
@@ -33,32 +31,29 @@ int main()
 		if (T < d)
 			break;
 
-		stock += b;
-
-		if (d >= eatDay )
+		
+		if (d >= lastDay )
 		{
-			if (stock >= (T - d + 1))
+			if (b >= (T - d + 1))
 			{
 				eat += (T - d + 1);
 				break;
 			}
 
-			eat += stock;
-			eatDay = d + stock;
+			eat += b;
+			lastDay = d + b;
 		}
 		else
 		{
-			if (stock >= (T - eatDay + 1))
+			if (b >= (T - lastDay + 1))
 			{
-				eat += (T - eatDay + 1);
+				eat += (T - lastDay + 1);
 				break;
 			}
 
-			eat += stock;
-			eatDay = eatDay + stock;
+			eat += b;
+			lastDay = lastDay + b;
 		}
-
-		stock = 0;
 	}
 
 	cout << eat;
